@@ -1,0 +1,39 @@
+.glass {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 15s linear infinite;
+}
+
+.font-heading {
+  font-family: 'Playfair Display', serif;
+}
+
+.text-gh-gold {
+  color: #d4af37;
+}
+
+.bg-gh-gold\/20 {
+  background-color: rgba(212, 175, 55, 0.2);
+}
+
+.border-gh-gold {
+  border-color: #d4af37;
+}
+
+.hover\:bg-gh-gold:hover {
+  background-color: #d4af37;
+}
+
+/* Ensure progress bar transition is smooth */
+circle {
+  transition: stroke-dashoffset 2s cubic-bezier(0.4, 0, 0.2, 1);
+}

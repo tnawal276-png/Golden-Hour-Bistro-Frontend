@@ -1,0 +1,325 @@
+/* About Page Styling */
+.about-page {
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+  overflow-x: hidden;
+}
+
+/* About Hero Section */
+.about-hero {
+  position: relative;
+  height: 60vh;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  background-color: #1a1a1a;
+  background: url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=100&w=2500&auto=format&fit=crop') no-repeat center center / cover;
+  background-attachment: scroll;
+}
+
+.about-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.45); /* Balanced overlay for text visibility */
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  animation: fadeInUp 1.2s ease-out;
+}
+
+.hero-badge {
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 12px;
+  background: transparent;
+  color: var(--accent-gold);
+  padding: 10px 0;
+  border: none;
+  border-bottom: 2px solid rgba(212, 175, 55, 0.6);
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  display: inline-block;
+}
+
+.hero-title {
+  font-family: var(--font-heading);
+  font-size: 5rem;
+  line-height: 1;
+  margin-bottom: 20px;
+  text-shadow: 0 4px 15px rgba(0,0,0,0.4);
+}
+
+.hero-title span {
+  display: block;
+  font-style: italic;
+  color: var(--accent-gold);
+  text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
+/* Heritage Section */
+.heritage-section {
+  padding: 150px 0;
+  background-color: #0a0a0a;
+}
+
+.heritage-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+  align-items: center;
+}
+
+.heritage-image-stack {
+  position: relative;
+  height: 600px;
+}
+
+.image-main {
+  width: 85%;
+  height: 500px;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.image-main img, .image-accent img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.5s ease;
+}
+
+.image-accent {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 60%;
+  height: 350px;
+  border: 15px solid #0a0a0a;
+  overflow: hidden;
+  box-shadow: -20px 20px 40px rgba(0,0,0,0.5);
+}
+
+.heritage-content h2.section-title {
+  font-size: 3.5rem;
+  margin-bottom: 40px;
+}
+
+.heritage-content h2.section-title span {
+  color: var(--accent-gold);
+  font-style: italic;
+}
+
+.milestone-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 60px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 40px;
+}
+
+.milestone h3 {
+  font-size: 2rem;
+  color: var(--accent-gold);
+  margin-bottom: 5px;
+}
+
+.milestone p {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--text-secondary);
+}
+
+/* Philosophy Section */
+.philosophy-section {
+  padding: 150px 0;
+  background-color: var(--bg-dark);
+}
+
+.philosophy-header {
+  margin-bottom: 100px;
+  text-align: center;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.value-card {
+  padding: 80px 40px;
+  text-align: center;
+  border-radius: 20px;
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.value-card:hover {
+  transform: translateY(-15px);
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--accent-gold);
+}
+
+.value-icon {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  color: var(--accent-gold);
+  margin-bottom: 30px;
+  opacity: 0.3;
+}
+
+.value-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.value-card p {
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+
+/* Atmosphere Break */
+.atmosphere-break {
+  padding: 200px 0;
+  background-image: url('https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?q=80&w=2000&auto=format&fit=crop');
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+.break-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(18, 18, 18, 0.85);
+}
+
+.break-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.break-title {
+  font-size: 4rem;
+  font-style: italic;
+  font-weight: 300;
+  color: #fff;
+  margin-bottom: 30px;
+}
+
+.break-title span {
+  color: var(--accent-gold);
+}
+
+.break-author {
+  font-family: var(--font-body);
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--accent-gold);
+  font-size: 0.9rem;
+}
+
+/* Visionary Section */
+.visionary-section {
+  padding: 150px 0;
+}
+
+.visionary-flex {
+  display: flex;
+  gap: 100px;
+  align-items: center;
+}
+
+.visionary-content {
+  flex: 1.2;
+}
+
+.visionary-image {
+  flex: 1;
+  height: 600px;
+  overflow: hidden;
+  border-radius: 40px;
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.visionary-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 30px;
+}
+
+.signature-box {
+  margin-top: 50px;
+  border-left: 2px solid var(--accent-gold);
+  padding-left: 30px;
+}
+
+.founder-name {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  color: #fff;
+}
+
+.founder-title {
+  color: var(--accent-gold);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  margin-top: 5px;
+}
+
+/* Utility Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsiveness */
+@media (max-width: 1024px) {
+  .heritage-grid, .visionary-flex {
+    grid-template-columns: 1fr;
+    flex-direction: column;
+    gap: 60px;
+  }
+  
+  .hero-title { font-size: 3.5rem; }
+  .values-grid { grid-template-columns: 1fr; }
+  .heritage-image-stack { height: 450px; }
+  .visionary-image { height: 500px; width: 100%; }
+}
+
+@media (max-width: 768px) {
+  .break-title { font-size: 2.5rem; }
+  .heritage-content h2.section-title { font-size: 2.5rem; }
+}

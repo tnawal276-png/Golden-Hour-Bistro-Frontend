@@ -1,0 +1,243 @@
+.hero-slider {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  background-color: #000;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: opacity 2s ease-in-out;
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.slide::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.7));
+  z-index: 1;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+/* Ken Burns Effect */
+.slide.active {
+  animation: kenBurns 10s ease-out forwards;
+}
+
+@keyframes kenBurns {
+  from { transform: scale(1); }
+  to { transform: scale(1.1); }
+}
+
+.gh-hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 900px;
+}
+
+.hero-title {
+  font-family: var(--font-heading);
+  font-size: 5rem;
+  font-weight: 400;
+  margin-bottom: 25px;
+  color: #fff;
+  letter-spacing: -1px;
+  line-height: 1.1;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.slide.active .hero-title {
+  animation: elegantFadeIn 1s ease-out 0.5s forwards;
+}
+
+.hero-subtitle {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  font-weight: 300;
+  margin-bottom: 40px;
+  color: rgba(255, 255, 255, 0.8);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.slide.active .hero-subtitle {
+  animation: elegantFadeIn 1s ease-out 0.8s forwards;
+}
+
+.btn-hero {
+  padding: 16px 40px;
+  background-color: var(--accent-gold);
+  color: var(--bg-dark);
+  border-radius: 0;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: all 0.4s ease;
+  opacity: 0;
+  transform: translateY(15px);
+}
+
+.slide.active .btn-hero {
+  animation: elegantFadeIn 1s ease-out 1.2s forwards;
+}
+
+.btn-hero:hover {
+  background-color: #fff;
+  color: #000;
+  transform: translateY(-5px);
+}
+
+.slider-dots {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 15px;
+  z-index: 3;
+}
+
+.dot {
+  width: 40px;
+  height: 2px;
+  background-color: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot.active {
+  background-color: var(--accent-gold);
+  width: 60px;
+}
+
+@keyframes elegantFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 3rem;
+  }
+  .hero-subtitle {
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+  }
+}
+
+/* Cinematic GSAP Slide Styles */
+.cinematic-slide {
+  background-color: #0c0c0c !important;
+  background-image: none !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+
+.cinematic-slide::after {
+  display: none;
+}
+
+.cinematic-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding-top: 80px;
+}
+
+.plate-section {
+  perspective: 1000px;
+}
+
+.plate-wrapper {
+  width: 550px;
+  height: 550px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-plate-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 30px 50px rgba(0,0,0,0.8));
+}
+
+.cinematic-title {
+  letter-spacing: -2px;
+  text-transform: uppercase;
+}
+
+.btn-cinematic-order {
+  padding: 18px 45px;
+  background-color: var(--accent-gold);
+  color: #000;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.75rem;
+  border-radius: 50px;
+  transition: all 0.4s ease;
+}
+
+.btn-cinematic-order:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+}
+
+.price-tag {
+  opacity: 0.3;
+  font-style: italic;
+}
+
+@media (max-width: 1024px) {
+  .cinematic-container {
+    flex-direction: column;
+    text-align: center;
+    padding-top: 120px;
+  }
+  
+  .text-section {
+    text-align: center !important;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .plate-wrapper {
+    width: 350px;
+    height: 350px;
+  }
+
+  .cinematic-title {
+    font-size: 3rem;
+  }
+}
+

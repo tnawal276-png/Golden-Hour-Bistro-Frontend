@@ -1,0 +1,16 @@
+.contact-page {
+  background: radial-gradient(circle at 50% 0%, #1a1a1a 0%, #000 70%);
+}
+
+.contact-page .font-heading {
+  font-family: 'Playfair Display', serif;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
