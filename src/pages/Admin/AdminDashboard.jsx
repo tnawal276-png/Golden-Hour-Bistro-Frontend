@@ -65,11 +65,11 @@ const AdminDashboard = () => {
     const fetchData = async () => {
       try {
         const [statsRes, ordersRes, resRes, menuRes, reviewsRes] = await Promise.all([
-          fetch('http://localhost:5000/api/admin/stats'),
-          fetch('http://localhost:5000/api/admin/orders'),
-          fetch('http://localhost:5000/api/admin/reservations'),
-          fetch('http://localhost:5000/api/menu'),
-          fetch('http://localhost:5000/api/reviews/admin')
+          fetch(`${import.meta.env.VITE_API_URL}/api/admin/stats`),
+          fetch(`${import.meta.env.VITE_API_URL}/api/admin/orders`),
+          fetch(`${import.meta.env.VITE_API_URL}/api/admin/reservations`),
+          fetch(`${import.meta.env.VITE_API_URL}/api/menu`),
+          fetch(`${import.meta.env.VITE_API_URL}/api/reviews/admin`)
         ]);
 
         setStats(await statsRes.json());
@@ -126,7 +126,7 @@ const AdminDashboard = () => {
     if (!newItem.name || !newItem.price) return;
     
     try {
-      const res = await fetch('http://localhost:5000/api/menu', {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/menu`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -147,7 +147,7 @@ const AdminDashboard = () => {
 
   const removeMenuItem = async (id) => {
     try {
-      await fetch(`http://localhost:5000/api/menu/${id}`, { method: 'DELETE' });
+      await fetch(`${import.meta.env.VITE_API_URL}/api/menu/${id}`, { method: 'DELETE' });
       setMenuItems(menuItems.filter(item => item._id !== id));
     } catch (err) {
       console.error('Error removing menu item:', err);
@@ -156,7 +156,7 @@ const AdminDashboard = () => {
 
   const approveReview = async (id) => {
     try {
-      await fetch(`http://localhost:5000/api/reviews/approve/${id}`, { method: 'PUT' });
+      await fetch(`${import.meta.env.VITE_API_URL}/api/reviews/approve/${id}`, { method: 'PUT' });
       setReviews(reviews.map(r => r._id === id ? { ...r, isApproved: true } : r));
     } catch (err) {
       console.error('Error approving review:', err);
@@ -165,7 +165,7 @@ const AdminDashboard = () => {
 
   const handleSupportTicket = async () => {
     try {
-      await fetch('http://localhost:5000/api/admin/support', {
+      await fetch(`${import.meta.env.VITE_API_URL}/api/admin/support`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

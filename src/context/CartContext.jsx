@@ -22,7 +22,7 @@ export const CartProvider = ({ children }) => {
   const fetchCart = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost:5000/api/cart', {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/cart`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       if (response.ok) {
@@ -38,7 +38,7 @@ export const CartProvider = ({ children }) => {
     if (user) {
       try {
         const token = localStorage.getItem('token');
-        const response = await fetch('http://localhost:5000/api/cart', {
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/api/cart`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -78,7 +78,7 @@ export const CartProvider = ({ children }) => {
     if (user) {
       try {
         const token = localStorage.getItem('token');
-        const response = await fetch(`http://localhost:5000/api/cart/${productId}`, {
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/api/cart/${productId}`, {
           method: 'DELETE',
           headers: { Authorization: `Bearer ${token}` }
         });
@@ -105,7 +105,7 @@ export const CartProvider = ({ children }) => {
     if (user) {
       try {
         const token = localStorage.getItem('token');
-        const response = await fetch(`http://localhost:5000/api/cart/${productId}`, {
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/api/cart/${productId}`, {
           method: 'PATCH',
           headers: {
             'Content-Type': 'application/json',

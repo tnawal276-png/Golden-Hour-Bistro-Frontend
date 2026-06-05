@@ -25,7 +25,7 @@ const BookTable = () => {
     setLoading(true);
 
     try {
-      const response = await fetch('http://localhost:5000/api/reservations', {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/reservations`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ ...formData, userId: user ? user.id : null })

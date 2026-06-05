@@ -12,7 +12,7 @@ export default function Community() {
   // Fetch posts from backend
   const fetchPosts = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/community');
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/community`);
       const data = await response.json();
       setPosts(data);
       setLoading(false);
@@ -32,7 +32,7 @@ export default function Community() {
     if (!idea.trim() || !name.trim()) return;
 
     try {
-      const response = await fetch('http://localhost:5000/api/community', {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/community`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name, idea }),
